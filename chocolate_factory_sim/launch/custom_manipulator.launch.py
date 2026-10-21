@@ -10,12 +10,12 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     # The name of the package the robot description is in.
-    package_name = 'custom_robot_sim'
+    package_name = 'chocolate_factory_sim'
 
     package_path = get_package_share_directory(package_name)
 
     # Compile the URDF Xacro description of the robot into pure XML.
-    xacro_file = os.path.join(package_path, 'urdf', 'robot_description.urdf.xacro')
+    xacro_file = os.path.join(package_path, 'urdf', 'robot_stand.urdf.xacro')
     doc = xacro.parse(open(xacro_file))
     xacro.process_doc(doc)
     my_robotarm_description = doc.toxml()
@@ -37,7 +37,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-r ' + world_file}.items()
+        launch_arguments={'gz_args': '-r ' + world_file +' --physics-engine gz-physics-bullet-featherstone-plugin'}.items()
     )
 
     node_spawn_entity = Node(
@@ -63,9 +63,34 @@ def generate_launch_description():
         output='screen'
     )
 
+    node_joint_broadcaster = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen",
+    )
+
+    # This is the node allows you to control your robot arm.
+    node_arm_controller = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["arm_controller"],
+        output="screen",
+    )
+
+    node_forward_controller = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["forward_controller"],
+        output="screen",
+    )
+
     return LaunchDescription([
         node_robot_state_publisher,
         gazebo_sim,
         node_spawn_entity,
         node_ros_gz_bridge,
+        node_joint_broadcaster,
+        node_arm_controller,
+        # node_forward_controller
     ])

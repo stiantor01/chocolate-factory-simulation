@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.6" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find custom_robot_sim)/models/inertial_macros.xacro.sdf" />
-    <xacro:include filename="$(find custom_robot_sim)/models/materials.xacro.sdf" />
+    <xacro:include filename="$(find chocolate_factory_sim)/models/inertial_macros.xacro.sdf" />
+    <xacro:include filename="$(find chocolate_factory_sim)/models/materials.xacro.sdf" />
 
 
     <xacro:macro name="table_leg" params="link_name x y z">

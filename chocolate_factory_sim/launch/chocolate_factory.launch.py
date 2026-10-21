@@ -8,7 +8,7 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
-    sim_path = get_package_share_directory('custom_robot_sim')
+    sim_path = get_package_share_directory('chocolate_factory_sim')
     robot_path = get_package_share_directory('chocolate_robot_description')
     gz_path = get_package_share_directory('ros_gz_sim')
 

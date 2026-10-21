@@ -2,6 +2,8 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
 
 import os
 import xacro
@@ -10,7 +12,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     # The name of the package the robot description is in.
-    package_name = 'custom_robot_sim'
+    package_name = 'chocolate_factory_sim'
 
     package_path = get_package_share_directory(package_name)
 
@@ -78,11 +80,10 @@ def generate_launch_description():
         output="screen",
     )
 
-    node_forward_controller = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["forward_controller"],
-        output="screen",
+    gz_spawn_world_objects = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [PathJoinSubstitution([FindPackageShare('chocolate_factory_sim'), 'launch', 'spawn_world_objects.launch.py'])]
+        )
     )
 
     return LaunchDescription([
@@ -92,5 +93,5 @@ def generate_launch_description():
         node_ros_gz_bridge,
         node_joint_broadcaster,
         node_arm_controller,
-        # node_forward_controller
+        gz_spawn_world_objects
     ])

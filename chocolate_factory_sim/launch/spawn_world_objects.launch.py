@@ -26,7 +26,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name='xacro')]),
             ' ',
             PathJoinSubstitution(
-                [FindPackageShare('custom_robot_sim'),
+                [FindPackageShare('chocolate_factory_sim'),
                     'urdf', 'table.urdf.xacro']
             ),
         ]
@@ -37,7 +37,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name='xacro')]),
             ' ',
             PathJoinSubstitution(
-                [FindPackageShare('custom_robot_sim'),
+                [FindPackageShare('chocolate_factory_sim'),
                     'urdf', 'box.urdf.xacro']
             ),
         ]
@@ -48,7 +48,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name='xacro')]),
             ' ',
             PathJoinSubstitution(
-                [FindPackageShare('custom_robot_sim'),
+                [FindPackageShare('chocolate_factory_sim'),
                     'urdf', 'cube.urdf.xacro']
             ),
         ]

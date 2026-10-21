@@ -3,7 +3,7 @@
 ROS 2 Jazzy and Gazebo simulation of a chocolate production line.
 
 ## Packages
-- custom_robot_sim: Gazebo world, conveyor belts and factory floor
+- chocolate_factory_sim: Gazebo world, conveyor belts and factory floor
 - chocolate_robot_description: Robot URDF and 3D models
 
 ## Requirements
@@ -45,7 +45,7 @@ Note: Run `source ~/ros2_ws/install/setup.bash` in every new terminal before lau
 
 3. Launch Gazebo:
 
-    ros2 launch custom_robot_sim chocolate_factory.launch.py
+    ros2 launch chocolate_factory_sim chocolate_factory.launch.py
 
 ## Simulation
 

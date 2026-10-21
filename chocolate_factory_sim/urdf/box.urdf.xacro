@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
 <robot name="box" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find custom_robot_sim)/urdf/inertial_macros.urdf.xacro" />
-    <xacro:include filename="$(find custom_robot_sim)/urdf/materials.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/inertial_macros.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/materials.urdf.xacro" />
 
     <xacro:property name="wall_length" value="0.105" />
     <xacro:property name="wall_width" value="0.005" />

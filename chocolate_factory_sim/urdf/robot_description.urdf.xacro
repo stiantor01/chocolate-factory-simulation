@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 
 <robot name="custom_manipulator" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find custom_robot_sim)/urdf/inertial_macros.urdf.xacro" />
-    <xacro:include filename="$(find custom_robot_sim)/urdf/robot_control.gazebo.xacro" />
-    <xacro:include filename="$(find custom_robot_sim)/urdf/materials.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/inertial_macros.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/robot_control.gazebo.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/materials.urdf.xacro" />
     
     <link name="base_footprint"/>
 
@@ -21,7 +21,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/arm_base_plate.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/arm_base_plate.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -59,7 +59,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/arm_base_link.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/arm_base_link.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -96,7 +96,7 @@
         <visual>
             <origin xyz="0 -${0.285/2} 0" rpy="${pi/2} 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/link_1.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/link_1.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -141,7 +141,7 @@
         <visual>
             <origin xyz="0 -${0.27/2} 0" rpy="${pi/2} 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/link_2.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/link_2.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -173,7 +173,7 @@
         <visual>
             <origin xyz="0 -0.08 0" rpy="${pi/2} 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/link_3.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/link_3.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -210,7 +210,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/gripper_base.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/gripper_base.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -247,7 +247,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -${pi/2} 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/gripper_finger.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/gripper_finger.stl" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -285,7 +285,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -${pi/2} 0"/>
             <geometry>
-                <mesh filename="$(find custom_robot_sim)/meshes/gripper_finger.stl" />
+                <mesh filename="$(find chocolate_factory_sim)/meshes/gripper_finger.stl" />
             </geometry>
             <material name="blue"/>
         </visual>

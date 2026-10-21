@@ -10,11 +10,11 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     # The name of the package the robot description is in.
-    package_name = 'custom_robot_sim'
+    package_name = 'chocolate_factory_sim'
     package_path = get_package_share_directory(package_name)
 
-    world_xacro_file_path = os.path.join(get_package_share_directory('custom_robot_sim'), 'worlds', 'pick_and_place_world.xacro.sdf')
-    world_file_path = os.path.join(get_package_share_directory('custom_robot_sim'), 'worlds', 'world.sdf')
+    world_xacro_file_path = os.path.join(get_package_share_directory('chocolate_factory_sim'), 'worlds', 'pick_and_place_world.xacro.sdf')
+    world_file_path = os.path.join(get_package_share_directory('chocolate_factory_sim'), 'worlds', 'world.sdf')
 
     # Compile the URDF Xacro description of the robot into pure XML.
     xacro_file = os.path.join(package_path, 'urdf', 'robot_stand.urdf.xacro')

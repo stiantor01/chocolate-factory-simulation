@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
 <robot name="cube" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find custom_robot_sim)/urdf/inertial_macros.urdf.xacro" />
-    <xacro:include filename="$(find custom_robot_sim)/urdf/materials.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/inertial_macros.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/materials.urdf.xacro" />
 
     <xacro:property name="size" value="0.05" />
 

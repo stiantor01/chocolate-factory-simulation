@@ -4,7 +4,7 @@
     <!-- Gazebo ROS 2 Control Plugin -->
     <gazebo>
         <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-            <parameters>$(find custom_robot_sim)/config/controller_config.yaml</parameters>
+            <parameters>$(find chocolate_factory_sim)/config/controller_config.yaml</parameters>
         </plugin>
     </gazebo>
 

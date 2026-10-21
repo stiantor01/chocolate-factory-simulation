@@ -73,13 +73,13 @@
         <model name="table_1">
             <pose>0.0 0.6 2.0 0 0 0</pose>
             <static>false</static>
-            <xacro:include filename="$(find custom_robot_sim)/models/table.xacro.sdf" />
+            <xacro:include filename="$(find chocolate_factory_sim)/models/table.xacro.sdf" />
         </model>
 
         <model name="table_2">
             <pose>0.0 -0.6 2.0 0 0 0</pose>
             <static>false</static>
-            <xacro:include filename="$(find custom_robot_sim)/models/table.xacro.sdf" />
+            <xacro:include filename="$(find chocolate_factory_sim)/models/table.xacro.sdf" />
         </model>
 
         <!-- TODOD: ADD CUBE MODEL -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <robot name="robot_stand" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find custom_robot_sim)/urdf/robot_description_no_dummy.urdf.xacro" />
+    <xacro:include filename="$(find chocolate_factory_sim)/urdf/robot_description_no_dummy.urdf.xacro" />
 
     <link name="base_footprint"/>
 

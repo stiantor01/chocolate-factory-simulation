@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 from glob import glob
 import os
 
-package_name = 'custom_robot_sim'
+package_name = 'chocolate_factory_sim'
 
 setup(
     name=package_name,
