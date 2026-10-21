@@ -100,5 +100,10 @@
       <pose>1 -2 0.75 1.57079632679 0 1.57079632679</pose>
     </include>
 
-</world>
+
+    <plugin
+      filename="libconveyor_system.so"
+      name="chocolate_conveyor::ConveyorSystem"/>
+
+  </world>
 </sdf>
