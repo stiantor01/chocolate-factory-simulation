@@ -14,6 +14,21 @@ ROS 2 Jazzy and Gazebo simulation of a chocolate production line.
 
 ## Installation
 
+Before starting, make sure Ubuntu 24.04 and ROS 2 Jazzy are installed.
+
+Install the required tools:
+
+    sudo apt update
+    sudo apt install -y git python3-colcon-common-extensions python3-rosdep ros-jazzy-ros-gz
+
+If rosdep has not been initialized:
+
+    sudo rosdep init
+    rosdep update
+
+Note: Run `source ~/ros2_ws/install/setup.bash` in every new terminal before launching the simulation.
+
+
 1. Create a workspace and clone the repository:
 
     mkdir -p ~/ros2_ws/src
