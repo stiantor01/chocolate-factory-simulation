@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Lokale sikkerhetskopier
+*_backup.stl
+model_backup.sdf

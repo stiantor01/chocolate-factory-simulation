@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="robot_base">
+    <static>true</static>
+
+    <link name="base">
+      <visual name="base_visual">
+        <geometry>
+          <mesh>
+            <uri>meshes/Base.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="base_collision">
+        <geometry>
+          <mesh>
+            <uri>meshes/Base.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

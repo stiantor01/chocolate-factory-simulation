@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="chocolate_robot">
+
+  <!-- Materials (shared across all assemblies) -->
+  <material name="Aluminum">
+    <color rgba="0.961 0.961 0.965 1.0"/>
+  </material>
+  <material name="Stainless_Steel_Brushed">
+    <color rgba="0.796 0.796 0.796 1.0"/>
+  </material>
+
+  <!-- Assembly includes -->
+  <xacro:include filename="$(find chocolate_robot_description)/urdf/assemblies/chocolate_robot.urdf.xacro"/>
+
+  <!-- Instantiate assemblies -->
+  <xacro:chocolate_robot prefix=""/>
+
+</robot>

@@ -1,0 +1,7 @@
+link,parent_joint,joint_type,rule,original_roll_deg,original_pitch_deg,original_yaw_deg,post_roll_deg,post_pitch_deg,post_yaw_deg,role
+base_link,,root,auto,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,root_x_forward_z_up
+link_1,joint_1,continuous,auto,0.000000,0.000000,0.000000,-180.000000,0.000000,0.000000,revolute_axis_z
+link_2,joint_2,continuous,auto,-50.000000,0.000000,0.000000,-90.000000,0.000000,0.000000,revolute_axis_z
+link_3,joint_3,continuous,auto,40.000000,0.000000,0.000000,90.000000,0.000000,0.000000,revolute_axis_z
+link_4,joint_4,continuous,auto,0.000000,0.000000,0.000000,-90.000000,0.000000,0.000000,revolute_axis_z
+link_5_suctioncup,joint_5,continuous,auto,0.000000,0.000000,0.000000,-180.000000,0.000000,0.000000,revolute_axis_z

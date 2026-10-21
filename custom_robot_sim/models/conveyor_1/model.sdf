@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="conveyor_1">
+    <static>true</static>
+    <link name="conveyor_link">
+      
+      <visual name="Band">
+        <geometry>
+          <mesh>
+            <uri>meshes/Band.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <pbr>
+            <metal>
+              <metalness>0.0</metalness>
+              <roughness>0.9</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="Ben">
+        <geometry>
+          <mesh>
+            <uri>meshes/Ben.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65 0.68 0.72 1</ambient>
+          <diffuse>0.65 0.68 0.72 1</diffuse>
+          <pbr>
+            <metal>
+              <metalness>0.8</metalness>
+              <roughness>0.35</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="Ruller">
+        <geometry>
+          <mesh>
+            <uri>meshes/Ruller.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.35 0.38 0.42 1</ambient>
+          <diffuse>0.35 0.38 0.42 1</diffuse>
+          <pbr>
+            <metal>
+              <metalness>0.85</metalness>
+              <roughness>0.25</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="Sidepanel">
+        <geometry>
+          <mesh>
+            <uri>meshes/Sidepanel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.77 0.80 1</ambient>
+          <diffuse>0.75 0.77 0.80 1</diffuse>
+          <pbr>
+            <metal>
+              <metalness>0.8</metalness>
+              <roughness>0.3</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
