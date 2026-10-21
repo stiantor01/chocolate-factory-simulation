@@ -2,6 +2,7 @@
 #include <gz/sim/System.hh>
 #include <gz/sim/Model.hh>
 #include <gz/sim/Link.hh>
+#include <gz/sim/Util.hh>
 #include <gz/sim/components/Model.hh>
 #include <gz/sim/components/Name.hh>
 #include <gz/sim/components/Pose.hh>
@@ -47,6 +48,13 @@ public:
           return true;
 
         const auto &pos = _pose->Data().Pos();
+
+        // Slett sjokoladeplater som har falt av transportbåndet.
+        if (pos.Z() < 0.30)
+        {
+          _ecm.RequestRemoveEntity(_entity);
+          return true;
+        }
 
         // Bare plater som ligger på høyre samlebånd.
         if (std::abs(pos.X() - beltX) > beltWidth / 2.0 ||
