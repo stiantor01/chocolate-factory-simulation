@@ -31,7 +31,7 @@ public:
     constexpr double beltZ = 0.75;
     constexpr double beltLength = 4.90;
     constexpr double beltWidth = 0.38;
-    constexpr double targetSpeed = 0.5;
+    constexpr double targetSpeed = 0.3;
     constexpr double gain = 120.0;
     constexpr double maxForce = 15.0;
 

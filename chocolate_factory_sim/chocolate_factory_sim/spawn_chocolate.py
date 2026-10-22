@@ -69,7 +69,7 @@ def main():
     try:
         while True:
             spawn_chocolate()
-            delay = random.uniform(3.0, 8.0)
+            delay = random.uniform(0.8, 1.5)
             print(f"Neste plate om {delay:.1f} sekunder", flush=True)
             time.sleep(delay)
     except KeyboardInterrupt:
