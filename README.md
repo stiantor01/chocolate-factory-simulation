@@ -99,3 +99,68 @@ Restart Gazebo after rebuilding.
 The project is under active development.
 
 Planned features include robot control, chocolate detection and automated pick-and-place operations.
+
+## Chocolate tracking (ROS 2)
+
+The C++ tracking node reads chocolate bar poses from Gazebo
+and publishes them to ROS 2.
+
+### Packages
+
+- chocolate_interfaces: Custom ROS 2 message definitions.
+- chocolate_tracking: Gazebo-to-ROS 2 tracking node.
+
+### Published topic
+
+Topic: /chocolate/poses
+Type: chocolate_interfaces/msg/ChocolatePoseArray
+
+Each chocolate bar includes:
+- Name
+- Gazebo entity ID
+- XYZ position in meters
+- Quaternion orientation (X, Y, Z, W)
+
+Only entities starting with chocolate_bar_ are published.
+
+### Build
+
+```bash
+source /opt/ros/jazzy/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install --packages-up-to chocolate_tracking
+source ~/ros2_ws/install/setup.bash
+```
+
+### Terminal 1 - Gazebo
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+export GZ_SIM_SYSTEM_PLUGIN_PATH="$HOME/ros2_ws/install/chocolate_conveyor/lib:${GZ_SIM_SYSTEM_PLUGIN_PATH}"
+ros2 launch chocolate_factory_sim chocolate_factory.launch.py
+```
+
+### Terminal 2 - Spawn chocolate bars
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+ros2 run chocolate_factory_sim spawn_chocolate
+```
+
+### Terminal 3 - Tracking
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+ros2 run chocolate_tracking chocolate_tracking_node
+```
+
+### Terminal 4 - Inspect ROS 2 data
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+ros2 topic echo /chocolate/poses --once
+```
