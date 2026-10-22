@@ -29,6 +29,6 @@ setup(
     license='TODO',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [],
+        'console_scripts': ['spawn_chocolate = chocolate_factory_sim.spawn_chocolate:main'],
     },
 )
