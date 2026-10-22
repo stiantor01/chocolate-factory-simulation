@@ -1,3 +1,4 @@
+from ament_index_python.packages import get_package_share_directory
 #!/usr/bin/env python3
 
 import math
@@ -41,8 +42,7 @@ def spawn_chocolate():
     z = 0.85
 
     model_path = (
-        Path.home()
-        / "ros2_ws/src/chocolate_factory_sim/models/chocolate_bar/model.sdf"
+        Path(get_package_share_directory("chocolate_factory_sim")) / "models/chocolate_bar/model.sdf"
     )
 
     model_name = f"chocolate_bar_{random.randint(100000, 999999)}"
