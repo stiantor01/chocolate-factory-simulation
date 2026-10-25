@@ -107,6 +107,7 @@ setenv('ROS_DOMAIN_ID', '15');
 node = ros2node("/matlab_controller");
 client = ros2actionclient(node, ...
     "/arm_controller/follow_joint_trajectory", ...
+
     "control_msgs/FollowJointTrajectory");
 ```
 
