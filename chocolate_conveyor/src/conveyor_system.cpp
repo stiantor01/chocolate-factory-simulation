@@ -49,6 +49,16 @@ public:
 
         const auto &pos = _pose->Data().Pos();
 
+        // Slett sjokolader når de når enden av samlebåndet.
+        if (std::abs(pos.X() - beltX) <= beltWidth / 2.0 &&
+            pos.Z() >= beltZ &&
+            pos.Z() <= beltZ + 0.20 &&
+            pos.Y() >= 0.35)
+        {
+          _ecm.RequestRemoveEntity(_entity);
+          return true;
+        }
+
         // Slett sjokoladeplater som har falt av transportbåndet.
         if (pos.Z() < 0.30)
         {
@@ -61,7 +71,7 @@ public:
             (pos.Y() - beltY) > beltLength / 2.0 ||
             (pos.Y() - beltY) < -beltLength / 2.0 ||
             pos.Z() < beltZ ||
-            pos.Z() > beltZ + 0.05)
+            pos.Z() > beltZ + 0.20)
           return true;
 
         static bool reported = false;

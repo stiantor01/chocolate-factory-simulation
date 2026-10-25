@@ -39,7 +39,7 @@ def spawn_chocolate():
     # Spawn nær starten av båndet
     x = BELT_X + x_offset
     y = BELT_Y - 1.8
-    z = 0.85
+    z = 0.7565
 
     model_path = (
         Path(get_package_share_directory("chocolate_factory_sim")) / "models/chocolate_bar/model.sdf"
