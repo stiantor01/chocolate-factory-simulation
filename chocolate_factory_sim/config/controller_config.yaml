@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100 #Hz
+    update_rate: 100
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -8,31 +8,20 @@ controller_manager:
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-    forward_controller:
-      type: forward_command_controller/ForwardCommandController
-
 arm_controller:
   ros__parameters:
     joints:
-      - arm_base_joint
-      - link_1_joint
-      - link_2_joint
-      - link_3_joint
-      - gripper_base_joint
-      - gripper_finger_left_joint
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+
     command_interfaces:
       - position
+
     state_interfaces:
       - position
       - velocity
 
-forward_controller:
-  ros__parameters:
-    joints:
-      - arm_base_joint
-      - link_1_joint
-      - link_2_joint
-      - link_3_joint
-      - gripper_base_joint
-      - gripper_finger_left_joint
-    interface_name: position
+    allow_partial_joints_goal: false

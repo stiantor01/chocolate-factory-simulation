@@ -93,12 +93,74 @@ Restart Gazebo after rebuilding.
 - Chocolate bars are dynamic physics objects.
 - The robot base is fixed to the world.
 - The robot has five movable joints.
+- World gravity is currently disabled (`0 0 0`) to keep the robot stable.
+- Natural falling behavior and realistic gravity-dependent physics are therefore not currently available.
+- Robot dynamics and gravity compensation require further development.
+
+## Robot Control (ROS 2 Action Server)
+
+The robot has five controllable joints and uses `gz_ros2_control`.
+
+The Gazebo launch file automatically starts:
+
+- `joint_state_broadcaster`
+- `arm_controller`
+
+The controller provides a ROS 2 Action Server:
+
+- Action: `/arm_controller/follow_joint_trajectory`
+- Type: `control_msgs/action/FollowJointTrajectory`
+
+### Verify controllers
+
+With Gazebo running, run:
+
+    source /opt/ros/jazzy/setup.bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 control list_controllers
+    ros2 action list -t
+
+Both controllers should report `active`.
+
+### MATLAB Integration
+
+MATLAB can control the robot using ROS Toolbox and a ROS 2 Action Client.
+
+The MATLAB computer and Ubuntu simulation must be able to communicate
+over the network and use the same `ROS_DOMAIN_ID`.
+
+The action client connects to:
+
+    /arm_controller/follow_joint_trajectory
+
+Joint names:
+
+    joint_1
+    joint_2
+    joint_3
+    joint_4
+    joint_5
+
+The controller accepts joint trajectories with target positions and timing information.
+
+### Portable Configuration
+
+The Gazebo robot URDF contains the placeholder:
+
+    __CONTROLLER_CONFIG_PATH__
+
+The launch file resolves this to the installed `controller_config.yaml`
+path and generates a temporary URDF before spawning the robot.
+
+This avoids hardcoded usernames and workspace paths.
 
 ## Development
 
 The project is under active development.
 
-Planned features include robot control, chocolate detection and automated pick-and-place operations.
+ROS 2 joint trajectory control is implemented and has been tested from MATLAB.
+
+Planned features include automated chocolate detection and pick-and-place operations.
 
 ## Chocolate tracking (ROS 2)
 

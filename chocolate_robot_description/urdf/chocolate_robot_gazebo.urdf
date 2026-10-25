@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="chocolate_robot">
+  <material name="Aluminum">
+    <color rgba="0.961 0.961 0.965 1.0" />
+  </material>
+  <material name="Stainless_Steel_Brushed">
+    <color rgba="0.796 0.796 0.796 1.0" />
+  </material>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.000000 -0.000000 0.009875" rpy="0 0 0" />
+      <mass value="17.043868" />
+      <inertia ixx="0.07965975" ixy="0.0" ixz="3.454097e-10" iyy="0.07965975" iyz="3.4608135e-10" izz="0.1374268" />
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/base_link.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Stainless_Steel_Brushed" />
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/base_link_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin xyz="-0.000000 0.000000 -0.150226" rpy="0 0 0" />
+      <mass value="29.5941955" />
+      <inertia ixx="0.26254975" ixy="5.775235e-07" ixz="1.779303e-07" iyy="0.2370806" iyz="1.177959e-07" izz="0.1339742" />
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 -0.000000 0.067260" rpy="3.141593 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_1.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Stainless_Steel_Brushed" />
+    </visual>
+    <collision>
+      <origin xyz="0.000000 -0.000000 0.067260" rpy="3.141593 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_1_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2">
+    <inertial>
+      <origin xyz="0.252212 -0.211631 -0.079085" rpy="0 0 0" />
+      <mass value="20.446867" />
+      <inertia ixx="0.620589" ixy="0.6610605" ixz="0.00064043" iyy="0.853715" iyz="-0.0005378935" izz="1.4074205" />
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.184215 0.153998" rpy="0.698132 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_2.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Aluminum" />
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.184215 0.153998" rpy="0.698132 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_2_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3">
+    <inertial>
+      <origin xyz="0.223812 0.187791 -0.066436" rpy="0 0 0" />
+      <mass value="13.116837" />
+      <inertia ixx="0.36475095" ixy="-0.4006213" ixz="-0.00024209295" iyy="0.50605" iyz="-0.0001910737" izz="0.8424325" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.515241 -1.835000 -0.035287" rpy="-0.872665 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_3.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Aluminum" />
+    </visual>
+    <collision>
+      <origin xyz="-0.515241 -1.835000 -0.035287" rpy="-0.872665 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_3_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_4">
+    <inertial>
+      <origin xyz="0.000000 0.016912 -0.050573" rpy="0 0 0" />
+      <mass value="1.813726" />
+      <inertia ixx="0.0047774425" ixy="-5.325455e-09" ixz="1.316545e-09" iyy="0.0026916525" iyz="-4.9222055e-07" izz="0.0048298815" />
+    </inertial>
+    <visual>
+      <origin xyz="-1.030483 1.292661 0.608001" rpy="1.570796 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_4.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Aluminum" />
+    </visual>
+    <collision>
+      <origin xyz="-1.030483 1.292661 0.608001" rpy="1.570796 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_4_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_5_suctioncup">
+    <inertial>
+      <origin xyz="-0.000082 0.000211 0.030292" rpy="0 0 0" />
+      <mass value="0.280359" />
+      <inertia ixx="0.0001828445" ixy="9.06885e-09" ixz="7.16737e-07" iyy="0.0004074582" iyz="-1.4604825e-06" izz="0.0003454383" />
+    </inertial>
+    <visual>
+      <origin xyz="-1.030483 -0.658558 1.176504" rpy="3.141593 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_5_suctioncup.dae" scale="1 1 1" />
+      </geometry>
+      <material name="Aluminum" />
+    </visual>
+    <collision>
+      <origin xyz="-1.030483 -0.658558 1.176504" rpy="3.141593 0.000000 0.000000" />
+      <geometry>
+        <mesh filename="package://chocolate_robot_description/meshes/chocolate_robot/link_5_suctioncup_collision.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="continuous">
+    <parent link="base_link" />
+    <child link="link_1" />
+    <origin xyz="-0.000000 -0.000000 0.067260" rpy="-3.141593 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="100.0" velocity="1.00" />
+  </joint>
+  <joint name="joint_2" type="continuous">
+    <parent link="link_1" />
+    <child link="link_2" />
+    <origin xyz="0.000000 0.101002 -0.204715" rpy="1.570796 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="100.0" velocity="1.00" />
+  </joint>
+  <joint name="joint_3" type="continuous">
+    <parent link="link_2" />
+    <child link="link_3" />
+    <origin xyz="0.515241 -0.432339 -0.000308" rpy="-3.141593 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="100.0" velocity="1.00" />
+  </joint>
+  <joint name="joint_4" type="continuous">
+    <parent link="link_3" />
+    <child link="link_4" />
+    <origin xyz="0.515241 0.432339 0.000012" rpy="-3.141593 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="100.0" velocity="1.00" />
+  </joint>
+  <joint name="joint_5" type="continuous">
+    <parent link="link_4" />
+    <child link="link_5_suctioncup" />
+    <origin xyz="0.000000 0.116157 -0.050557" rpy="-1.570796 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="100.0" velocity="1.00" />
+  </joint>
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-0.7853981633974483</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.2217304763960306</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.2217304763960306</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+  </ros2_control>
+  <link name="world" />
+  <joint name="world_to_base" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>__CONTROLLER_CONFIG_PATH__</parameters>
+    </plugin>
+  </gazebo>
+</robot>
