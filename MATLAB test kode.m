@@ -1,9 +1,9 @@
-% ROS 2 connection
+%% ROS 2 connection
 setenv('ROS_DOMAIN_ID', '15');
 
 node = ros2node("/matlab_controller");
 
-% Connect to the robot controller
+%% Connect to the robot controller
 client = ros2actionclient(node, ...
     "/arm_controller/follow_joint_trajectory", ...
     "control_msgs/FollowJointTrajectory");
@@ -11,7 +11,7 @@ client = ros2actionclient(node, ...
 % Wait for the action server
 waitForServer(client);
 
-% Create trajectory goal
+%% Create trajectory goal
 goal = ros2message(client);
 
 goal.trajectory.joint_names = { ...
@@ -37,7 +37,7 @@ point.time_from_start.nanosec = uint32(0);
 
 goal.trajectory.points = point;
 
-% Send trajectory
+%% Send trajectory
 goalHandle = sendGoal(client, goal);
 
 disp("Trajectory sent to robot");
