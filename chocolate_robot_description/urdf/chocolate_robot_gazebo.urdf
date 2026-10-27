@@ -126,40 +126,40 @@
       </geometry>
     </collision>
   </link>
-  <joint name="joint_1" type="continuous">
+  <joint name="joint_1" type="revolute">
     <parent link="base_link" />
     <child link="link_1" />
     <origin xyz="-0.000000 -0.000000 0.067260" rpy="-3.141593 0.000000 0.000000" />
     <axis xyz="0.000000 0.000000 1.000000" />
-    <limit effort="100.0" velocity="1.00" />
+    <limit effort="100" velocity="100" lower="-3.141593" upper="3.141593"/>
   </joint>
-  <joint name="joint_2" type="continuous">
+  <joint name="joint_2" type="revolute">
     <parent link="link_1" />
     <child link="link_2" />
-    <origin xyz="0.000000 0.101002 -0.204715" rpy="1.570796 0.000000 0.000000" />
-    <axis xyz="0.000000 0.000000 1.000000" />
-    <limit effort="100.0" velocity="1.00" />
+    <origin xyz="0.000000 0.101002 -0.204715" rpy="1.570796 -0.698132 0.000000" />
+    <axis xyz="0.000000 0.000000 -1.000000" />
+    <limit effort="100" velocity="100" lower="-3.141593" upper="3.141593"/>
   </joint>
-  <joint name="joint_3" type="continuous">
+  <joint name="joint_3" type="revolute">
     <parent link="link_2" />
     <child link="link_3" />
     <origin xyz="0.515241 -0.432339 -0.000308" rpy="-3.141593 0.000000 0.000000" />
     <axis xyz="0.000000 0.000000 1.000000" />
-    <limit effort="100.0" velocity="1.00" />
+    <limit effort="100" velocity="100" lower="-3.141593" upper="3.141593"/>
   </joint>
-  <joint name="joint_4" type="continuous">
+  <joint name="joint_4" type="revolute">
     <parent link="link_3" />
     <child link="link_4" />
-    <origin xyz="0.515241 0.432339 0.000012" rpy="-3.141593 0.000000 0.000000" />
-    <axis xyz="0.000000 0.000000 1.000000" />
-    <limit effort="100.0" velocity="1.00" />
+    <origin xyz="0.515241 0.432339 0.000012" rpy="-3.141593 0.000000 0.698132" />
+    <axis xyz="0.000000 0.000000 -1.000000" />
+    <limit effort="100" velocity="100" lower="-3.141593" upper="3.141593"/>
   </joint>
-  <joint name="joint_5" type="continuous">
+  <joint name="joint_5" type="revolute">
     <parent link="link_4" />
     <child link="link_5_suctioncup" />
     <origin xyz="0.000000 0.116157 -0.050557" rpy="-1.570796 0.000000 0.000000" />
     <axis xyz="0.000000 0.000000 1.000000" />
-    <limit effort="100.0" velocity="1.00" />
+    <limit effort="100" velocity="100" lower="-3.141593" upper="3.141593"/>
   </joint>
   <ros2_control name="GazeboSimSystem" type="system">
     <hardware>
@@ -176,7 +176,7 @@
     <joint name="joint_2">
       <command_interface name="position" />
       <state_interface name="position">
-        <param name="initial_value">0.0</param>
+        <param name="initial_value">0.698132</param>
       </state_interface>
       <state_interface name="velocity" />
       <state_interface name="effort" />
@@ -192,7 +192,7 @@
     <joint name="joint_4">
       <command_interface name="position" />
       <state_interface name="position">
-        <param name="initial_value">-1.2217304763960306</param>
+        <param name="initial_value">-0.523599</param>
       </state_interface>
       <state_interface name="velocity" />
       <state_interface name="effort" />
